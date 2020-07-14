@@ -11,7 +11,7 @@ export function Banner() {
   return (
     <View style={{height: (windowHeight < 665 ? windowHeight - 65 : windowHeight)}}>
 
-      <Title h={windowHeight}/>
+      <Title />
       <ProductContent />
       {windowHeight < 665 ? null : <ShowDetails /> }
 
