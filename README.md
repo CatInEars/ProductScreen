@@ -1,12 +1,12 @@
 #[RN] Product Screen Page </br>
 <h2>Якори:</h2>
 <ol>
-  <li><a href="p1">Цель</a></li>
-  <li><a href="p2">Технологии</a></li>
-  <li><a href="p3">Сложности</a></li>
-  <li><a href="p4">Новые навыки</a></li>
-  <li><a href="p5">Качество кода</a></li>
-  <li><a href="p6">Время</a></li>
+  <li><a href="#p1">Цель</a></li>
+  <li><a href="#p2">Технологии</a></li>
+  <li><a href="#p3">Сложности</a></li>
+  <li><a href="#p4">Новые навыки</a></li>
+  <li><a href="#p5">Качество кода</a></li>
+  <li><a href="#p6">Время</a></li>
 </ol>
 
 <h2 id="p1">Цель</h2></hr>
