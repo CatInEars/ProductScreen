@@ -1,14 +1,14 @@
 import React from 'react';
-import { TouchableWithoutFeedback, ToastAndroid } from 'react-native';
-import Svg, { Defs, G, Path } from "react-native-svg";
+import { TouchableWithoutFeedback } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import Svg, { Defs, G, Path } from 'react-native-svg';
 
 export function HamburgerIcon() {
-  const showToast = () => {
-    ToastAndroid.show('Мне было лень делать боковое меню :)', ToastAndroid.SHORT);
-  };
-
+  const navigation = useNavigation();
+  // Уж не ругайтесь svg какую нашел - такую нашел :)
+  
   return (
-    <TouchableWithoutFeedback onPress={() => showToast()}>
+    <TouchableWithoutFeedback onPress={() => navigation.openDrawer()}>
       <Svg
         width={26}
         height={26}
@@ -31,5 +31,5 @@ export function HamburgerIcon() {
         </G>
       </Svg>
     </TouchableWithoutFeedback>
-  )
+  );
 }

@@ -1,43 +1,20 @@
-import React, { useRef } from 'react';
-import {
-  ScrollView,
-  SafeAreaView,
-  Platform,
-  Animated,
-  Dimensions
-} from 'react-native';
+import React from 'react';
+import Main from './components/Main';
+import { NavigationContainer }from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import { Banner } from './components/Banner/Banner';
-import { Details } from './components/Details/Details';
 import { ErrorBoundary } from './components/others/ErrorBoundary';
-import { ScrollContext } from './components/others/ScrollContext';
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
-  const scrollY = useRef( new Animated.Value(0)).current;
-  const windowHeight = Dimensions.get('window').height;
   return (
     <ErrorBoundary>
-      <ScrollContext.Provider value={{scrollY}}>
-        <SafeAreaView style={(Platform.OS === 'android' ? {marginTop: 30} : null)}>
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-            pagingEnabled={windowHeight < 665 ? false : true}
-            onScroll={ Animated.event([{
-                nativeEvent: {
-                  contentOffset: {
-                    y: scrollY
-                  }
-                }
-              }])
-            }
-          > 
-            
-            <Banner />
-            <Details />
-            
-          </ScrollView>
-        </SafeAreaView>
-      </ScrollContext.Provider>
+      <NavigationContainer>
+        <Drawer.Navigator>
+          <Drawer.Screen name='Hello from Navigation :)' component={Main}/>
+        </Drawer.Navigator>
+      </NavigationContainer>
     </ErrorBoundary>
   )
 }
